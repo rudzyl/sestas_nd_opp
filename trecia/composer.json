@@ -1,0 +1,16 @@
+{
+    "name": "rugil/trecia",
+    "authors": [
+        {
+            "name": "rugile",
+            "email": "rugile.geceviciute@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Miskas\\Didelis\\": "bla/",
+            "Miskas\\Mazas\\": "Miskas/Mazas/"
+        }
+    }
+}

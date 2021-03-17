@@ -1,26 +1,42 @@
 <?php
-include __DIR__ .'/Grybas.php';
-include __DIR__ .'/Krepsys.php';
+//  include __DIR__ .'/Krepsys.php';
+//  include __DIR__ .'/Grybas.php';
+include 'vendor\autoload.php';
 
-$grybas1 = new Grybas;
+//  spl_autoload_register(function ($class) {
 
-echo '<pre>';
-var_dump($grybas1);
+//       $prefix = 'Miskas\Didelis';
+//       $base_dir = __DIR__ . '/bla';
+//       $len = strlen($prefix);
+//       if (strncmp($prefix, $class, $len) !== 0) {
+        
+//           return;
+//       }
+//       $relative_class = substr($class, $len);
+//       $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+//       if (file_exists($file)) {
+//           require $file;
+//       }
+//  });
+//  spl_autoload_register(function ($class) {
 
-$krepsys = new Krepsys;
+//       $prefix = '';
+//       $base_dir = __DIR__ . '/';
+//       $len = strlen($prefix);
 
-    while($krepsys->svoris <= 500) {
+//       if (strncmp($prefix, $class, $len) !== 0) {
+        
+//           return;
+//       }
+//       $relative_class = substr($class, $len);
+//       $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+//       if (file_exists($file)) {
+//           require $file;
+//       }
+//  });
 
-        $grybas1 = new Grybas();
-        var_dump($grybas1);
+$krepsys = new Miskas\Didelis\Krepsys;
 
-        if($grybas1->getValgomas() == true && $grybas1->sukirmijes == false) {
-            $krepsys->prideti($grybas1->getGryboSvoris());
-        }
-        $krepsys->visiGrybai++;
-    }
+while($krepsys->prideti(new Miskas\Mazas\Grybas)){}
 
-
-
-var_dump($grybas1);
-var_dump($krepsys);
+_dc($krepsys);

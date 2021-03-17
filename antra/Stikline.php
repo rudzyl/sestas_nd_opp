@@ -10,7 +10,7 @@
 class Stikline {
 
     private $turis;
-    private $kiekis;
+    private $kiekis = 0;
 //be konstruktoriaus nebus priskirta turio
     public function __construct($turis) {
 
@@ -19,20 +19,16 @@ class Stikline {
     }
 
     public function ipilti($litrai) {
-        if($this-> turis < $litrai) {
-            $this->kiekis = $this-> turis;
-            echo 'netelpa';   
-        } else {
-            $this->kiekis += $litrai;
-        }
+
+        $visoKiekis = $litrai + $this->kiekis;
+        $this->kiekis = min($this->turis, $visoKiekis);
         
     }
     public function ispilti() {
-
-        $likutis = $this-> kiekis;
+        $kiekis = $this->kiekis;
         $this->kiekis = 0;
-
-        return $likutis;
+       
+        return $kiekis;
         
 
     }
