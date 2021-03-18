@@ -10,19 +10,18 @@ class ComposerStaticInit157d0edec7efe87b37889ef2f21cc4a1
         'M' => 
         array (
             'Miskas\\Mazas\\' => 13,
-            'Miskas\\Didelis\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Miskas\\Mazas\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Miskas/Mazas',
-        ),
-        'Miskas\\Didelis\\' => 
-        array (
             0 => __DIR__ . '/../..' . '/bla',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/',
     );
 
     public static $classMap = array (
@@ -34,6 +33,7 @@ class ComposerStaticInit157d0edec7efe87b37889ef2f21cc4a1
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit157d0edec7efe87b37889ef2f21cc4a1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit157d0edec7efe87b37889ef2f21cc4a1::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit157d0edec7efe87b37889ef2f21cc4a1::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInit157d0edec7efe87b37889ef2f21cc4a1::$classMap;
 
         }, null, ClassLoader::class);

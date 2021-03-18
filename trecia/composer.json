@@ -9,8 +9,8 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Miskas\\Didelis\\": "bla/",
-            "Miskas\\Mazas\\": "Miskas/Mazas/"
+            "Miskas\\Mazas\\": "bla/",
+            "": ""
         }
     }
 }
